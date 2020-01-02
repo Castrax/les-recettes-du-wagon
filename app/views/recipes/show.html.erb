@@ -4,6 +4,7 @@
 <p><%= @recipe.difficulty %></p>
 <p><%= @recipe.cost %></p>
 <p><%= @recipe.preparation %></p>
-<p><%= @recipe.total_time %></p>
+<p><%= @recipe.total_time.utc.strftime("%Hh%M") %></p>
 <p><%= @recipe.season %></p>
 <p><%= @recipe.ustensils %></p>
+<%= link_to "Ajouter des ingrédients", new_recipe_ingredient_path(@recipe)  %>

@@ -48,3 +48,11 @@ Hachez l'oignon et les piments. Mélangez la purée avec l'oignon et les piments
   ustensils: "1 saladier"
 })
 puts 'Finished!'
+
+puts 'Creating ingredients...'
+20.times do
+  Ingredient.create!({
+    name: Faker::Food.ingredient
+  })
+end
+puts 'Finished!'

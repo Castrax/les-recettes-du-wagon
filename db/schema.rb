@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_28_211130) do
+ActiveRecord::Schema.define(version: 2019_12_30_165001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 2019_12_28_211130) do
     t.string "difficulty"
     t.string "cost"
     t.string "preparation"
-    t.string "total_time"
     t.string "season"
     t.string "ustensils"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.time "total_time"
   end
 
   add_foreign_key "doses", "ingredients"

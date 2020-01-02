@@ -5,7 +5,7 @@
  <%= f.input :number_persons %>
  <%= f.input :difficulty, collection: ["facile", "moyen", "difficile"] %>
  <%= f.input :cost, collection: ["éco", "moyen", "cher"] %>
- <%= f.text_area :preparation %>
+ <%= f.input :preparation, as: :text %>
  <%= f.input :total_time, as: :time %>
  <%= f.input :season, collection: ["printemps", "été", "automne", "hiver"] %>
  <%= f.input :ustensils %>
