@@ -1,0 +1,7 @@
+<h2>Ajouter une portion (pour une personne)</h2>
+<%= simple_form_for [@recipe, @dose] do |f| %>
+ <%= f.input :description %>
+ <%= f.association :ingredient %>
+ <%= f.submit "Ajouter la portion", class: "btn btn-primary" %>
+<% end %>
+

@@ -1,9 +1,7 @@
 <h1>Toutes les recettes</h1>
 <ul>
   <% @recipes.each do |recipe| %>
-    <li> <%= link_to recipe.title, recipe_path(recipe) %> <%= link_to "Supprimer", recipe_path(recipe),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %> <%= link_to "Modifier", edit_recipe_path(recipe) %></li>
+    <li> <%= link_to recipe.title, recipe_path(recipe) %></li>
   <% end %>
 </ul>
 <%= link_to "Ajouter une recette", new_recipe_path, class: "btn btn-primary" %>

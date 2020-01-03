@@ -7,4 +7,16 @@
 <p><%= @recipe.total_time.utc.strftime("%Hh%M") %></p>
 <p><%= @recipe.season %></p>
 <p><%= @recipe.ustensils %></p>
-<%= link_to "Ajouter des ingrédients", new_recipe_ingredient_path(@recipe)  %>
+<% if @recipe.ingredients.empty? %>
+  <%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe) %>
+<% else %>
+  <ul><% @recipe.doses.each do |d| %>
+    <li><%= Ingredient.find(id=d.ingredient_id).name %> - <%= d.description %> <%= link_to "Supprimer", recipe_dose_path(d), method: :delete, data: { confirm: "Are you sure?" } %> <%= link_to "Modifier", edit_recipe_dose_path(d) %></li>
+  </ul>
+  <p><%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe) %></p>
+  <% end %>
+<% end %>
+<p><%= link_to "Supprimer la recette", recipe_path(@recipe),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></p>
+<p><%= link_to "Modifier la recette", edit_recipe_path(@recipe) %></p>

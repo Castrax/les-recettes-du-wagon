@@ -1,6 +1,0 @@
-<h2>Ajouter un ingrédient</h2>
-<%= simple_form_for [@recipe, @ingredient] do |f| %>
- <%= f.input :name %>
- <%= f.input :month, collection: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"] %>
- <%= f.submit "Ajouter l'ingrédient", class: "btn btn-primary" %>
-<% end %>
