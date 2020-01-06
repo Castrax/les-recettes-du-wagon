@@ -1,7 +1,9 @@
-<h1>Toutes les recettes</h1>
-<ul>
-  <% @recipes.each do |recipe| %>
-    <li> <%= link_to recipe.title, recipe_path(recipe) %></li>
-  <% end %>
-</ul>
-<%= link_to "Ajouter une recette", new_recipe_path, class: "btn btn-primary" %>
+<div class="container">
+  <h1 class="mt-3">Toutes les recettes</h1>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li> <%= link_to recipe.title, recipe_path(recipe) %></li>
+    <% end %>
+  </ul>
+  <%= link_to "Ajouter une recette", new_recipe_path, class: "btn btn-primary" %>
+</div>
