@@ -1,0 +1,18 @@
+.list-recipes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.card a:hover {
+  text-decoration: none;
+}
+
+.card-body h3 {
+  color: black;
+  font-size: 1.25rem;
+  &:hover {
+    text-decoration: none;
+    color: $pink;
+  }
+}

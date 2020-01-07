@@ -13,12 +13,16 @@
   <div class="index-recipes">
     <p class="mt-3">Ou parcourez la liste des recettes :</p>
     <div class="list-recipes">
-      <div class="card" style="width: 18rem;">
-        <% @recipes.each do |recipe| %>
-          <%= cl_image_tag recipe.photos.first.key, crop: :fill, class: 'card-img-top' %>
-          <%= link_to recipe.title, recipe_path(recipe) %>
-        <% end %>
-      </div>
+      <% @recipes.each do |recipe| %>
+        <div class="card">
+          <%= link_to recipe_path(recipe) do %>
+            <%= cl_image_tag recipe.photos.first.key, height: 272, width: 370, crop: :fill, class: 'card-img-top' %>
+            <div class="card-body">
+              <h3 class="card-text"><%= recipe.title %></h3>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
