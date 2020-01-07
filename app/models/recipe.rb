@@ -4,7 +4,7 @@ class Recipe < ApplicationRecord
   has_many_attached :photos
   validates :title, presence: true
   validates :description, presence: true
-  validates :number_persons, presence: true
+  validates :kitchen_type, presence: true
   validates :difficulty, presence: true, inclusion: { in: %w(facile moyen difficile),
     message: "%{value} n'est pas un niveau de difficulté valide" }
   validates :cost, presence: true, inclusion: { in: %w(éco moyen cher),

@@ -8,6 +8,28 @@
   text-decoration: none;
 }
 
+.card-body {
+  text-align: center;
+  .kitchen-type {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: $pink;
+  }
+  .season {
+    font-weight: 300;
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-style: italic;
+    color: $pink;
+  }
+  .description {
+    color: black;
+    font-weight: 300;
+    font-size: 0.9rem;
+  }
+}
+
 .card-body h3 {
   color: black;
   font-size: 1.25rem;
@@ -16,3 +38,24 @@
     color: $pink;
   }
 }
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .time, .author, .likes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .time, .author, .likes p {
+    margin-bottom: 0;
+    margin-left: 0.25rem;
+    color: black;
+  }
+  .far {
+    color: $pink;
+  }
+}
+
+

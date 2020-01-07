@@ -2,6 +2,7 @@
 <%= simple_form_for @recipe do |f| %>
  <%= f.input :title %>
  <%= f.input :description %>
+ <%= f.input :kitchen_type %>
  <%= f.input :difficulty, collection: ["facile", "moyen", "difficile"] %>
  <%= f.input :cost, collection: ["éco", "moyen", "cher"] %>
  <%= f.input :preparation, as: :text %>
