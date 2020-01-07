@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="mt-3">Toutes les recettes</h1>
+  <p class="mt-3">Recherchez une recette :</p>
   <div class="search-box">
     <%= simple_form_for :search, url: recipes_path, method: "GET", html: { class: 'form-inline' } do |f| %>
     <div class="search-form-control form-group">
@@ -10,10 +10,13 @@
     </div>
     <% end %>
   </div>
-  <ul>
-    <% @recipes.each do |recipe| %>
-      <li> <%= link_to recipe.title, recipe_path(recipe) %></li>
-    <% end %>
-  </ul>
-  <%= link_to "Ajouter une recette", new_recipe_path, class: "btn btn-primary" %>
+  <div class="list-recipes">
+    <p class="mt-3">Ou parcourez la liste des recettes :</p>
+    <ul>
+      <% @recipes.each do |recipe| %>
+        <li> <%= link_to recipe.title, recipe_path(recipe) %></li>
+      <% end %>
+    </ul>
+    <%= link_to "Ajouter une recette", new_recipe_path, class: "btn btn-primary" %>
+  </div>
 </div>
