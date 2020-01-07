@@ -9,5 +9,6 @@
  <%= f.input :total_time, as: :time %>
  <%= f.input :season, collection: ["printemps", "été", "automne", "hiver"] %>
  <%= f.input :ustensils %>
+ <%= f.input :photos, as: :file, input_html: { multiple: true } %>
  <%= f.submit "Ajouter la recette", class: "btn btn-primary" %>
 <% end %>
