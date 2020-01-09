@@ -1,0 +1,127 @@
+.layout-single {
+  transform: translateY(-100px);
+  padding: 50px 100px 0;
+  margin-bottom: -100px;
+  z-index: 8;
+  position: relative;
+  background-image: url(https://res.cloudinary.com/ddlesqeup/image/upload/v1578510181/box-shadow_dgrsy0.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 96%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: -1;
+    background-color: #ffffff;
+  }
+}
+
+.top-single {
+  text-align: center;
+    .single-kitchen {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: $pink;
+  }
+  .single-title {
+    font-size: 1.5rem;
+  }
+}
+
+.facts-single {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 1.5rem;
+  .time, .author, .likes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .time > p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    color: black;
+  }
+  .author > p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    color: black;
+  }
+  .likes > p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    color: black;
+  }
+  .far {
+    color: $pink;
+  }
+}
+
+.description {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.characteristics-single {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin-top: 2rem;
+  .total_time-single, .difficulty-single, .season-single, .cost-single {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-gray;
+    padding: 0.5rem;
+    text-transform: capitalize;
+  }
+  .far, .fas {
+  color: $middle-gray;
+  }
+}
+
+.characteristics-single h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.lines {
+  margin-left: 2rem;
+  line-height: 1.5rem;
+  padding: 0.5rem;
+  p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  color: $middle-gray;
+  font-weight: 800;
+  }
+}
+
+.middle-single {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.5rem;
+  text-align: center;
+  .ingredients, .utensils {
+    padding: 1rem;
+  }
+  .top-ingredients, .top-utensils {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

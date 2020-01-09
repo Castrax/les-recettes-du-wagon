@@ -1,21 +1,94 @@
-<h2><%= @recipe.title %></h2>
-<p><%= @recipe.description %></p>
-<p><%= @recipe.kitchen_type %></p>
-<p><%= @recipe.difficulty %></p>
-<p><%= @recipe.cost %></p>
-<p><%= @recipe.preparation %></p>
-<p><%= @recipe.total_time.utc.strftime("%Hh%M") %></p>
-<p><%= @recipe.season %></p>
-<p><%= @recipe.ustensils %></p>
-<% if @recipe.ingredients.empty? %>
-  <%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe) %>
-<% else %>
-  <ul><% @recipe.doses.each do |d| %>
-    <li><%= Ingredient.find(id=d.ingredient_id).name %> - <%= d.description %> <%= link_to "Supprimer", recipe_dose_path(d), method: :delete, data: { confirm: "Are you sure?" } %> <%= link_to "Modifier", edit_recipe_dose_path(d) %></li>
-  </ul>
-  <p><%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe) %></p>
-  <% end %>
-<% end %>
+<%= render 'shared/carousel-show' %>
+<div class="container">
+  <div class="layout-single">
+    <div class="top-single">
+      <p class="single-kitchen"><%= @recipe.kitchen_type %></p>
+      <h2 class="single-title"><%= @recipe.title %></h2>
+    </div>
+    <div class="facts-single">
+      <div class="time">
+        <i class="far fa-clock"></i>
+        <p>Publié le <%= l(@recipe.created_at.utc, format: '%B %d, %Y') %></p>
+      </div>
+      <div class="author">
+        <i class="far fa-user"></i>
+        <p>#</p>
+      </div>
+      <div class="likes">
+        <i class="far fa-heart"></i>
+        <p>#</p>
+      </div>
+    </div>
+    <div class="description">
+      <p><%= @recipe.description %></p>
+    </div>
+    <div class="characteristics-single">
+      <div class="total_time-single">
+        <i class="fas fa-stopwatch fa-2x"></i>
+        <div class="lines">
+          <h3>Temps total</h3>
+          <p><%= @recipe.total_time.utc.strftime("%Hh%M") %></p>
+        </div>
+      </div>
+      <div class="difficulty-single">
+        <i class="far fa-lightbulb fa-2x"></i>
+        <div class="lines">
+          <h3>Difficulté</h3>
+          <p><%= @recipe.difficulty %></p>
+        </div>
+      </div>
+      <div class="season-single">
+        <i class="far fa-snowflake fa-2x"></i>
+        <div class="lines">
+          <h3>Saison</h3>
+          <p><%= @recipe.season %></p>
+        </div>
+      </div>
+      <div class="cost-single">
+        <i class="fas fa-euro-sign fa-2x"></i>
+        <div class="lines">
+          <h3>Coût</h3>
+          <p><%= @recipe.cost %></p>
+        </div>
+      </div>
+    </div>
+    <div class="middle-single">
+      <div class="ingredients">
+        <div class="top-ingredients">
+          <i class="fas fa-list"></i>
+          <h3>Ingrédients</h3>
+        </div>
+        <div class="bottom-ingredients">
+          <% if @recipe.ingredients.empty? %>
+            <p>Vous n’avez pas encore ajouté d’ingrédient à votre recette.</p>
+            <%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary' %>
+          <% else %>
+            <ul><% @recipe.doses.each do |d| %>
+              <li><%= Ingredient.find(id=d.ingredient_id).name %> - <%= d.description %> <%= link_to "Supprimer", recipe_dose_path(d), method: :delete, data: { confirm: "Are you sure?" } %> <%= link_to "Modifier", edit_recipe_dose_path(d) %></li>
+            </ul>
+            <p><%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe) %></p>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="utensils">
+        <div class="top-utensils">
+          <i class="fas fa-utensils"></i>
+          <h3>Ustensiles</h3>
+        </div>
+        <div class="bottom-utensils">
+          <p><%= @recipe.ustensils %></p>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-single">
+      <div class="preparations">
+        <p><%= @recipe.preparation %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <p><%= link_to "Supprimer la recette", recipe_path(@recipe),
       method: :delete,
       data: { confirm: "Are you sure?" } %></p>
