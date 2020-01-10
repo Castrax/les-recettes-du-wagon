@@ -13,6 +13,14 @@
   width: 40px;
 }
 
+.navbar-brand {
+  display: flex;
+  .fas {
+    color: $pink;
+  }
+}
+
 .navbar-brand h1 {
   font-size: 1.5rem;
+  margin-left: 1rem;
 }
