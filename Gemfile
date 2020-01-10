@@ -16,6 +16,11 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
 gem 'cloudinary'
+gem 'jquery-rails'
+gem 'summernote-rails'
+gem 'bootstrap'
+gem 'turbolinks'
+gem 'coffee-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
