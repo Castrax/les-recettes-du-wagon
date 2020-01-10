@@ -117,11 +117,25 @@
   grid-gap: 1.5rem;
   text-align: center;
   .ingredients, .utensils {
-    padding: 1rem;
+    padding: 2rem;
+  }
+  .ingredients {
+    background-color: $lighter-gray;
+  }
+  .utensils {
+    background-color: $light-pink;
   }
   .top-ingredients, .top-utensils {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .top-ingredients h3 {
+    font-size: 1.25rem;
+    margin-left: 1rem;
+  }
+  .top-utensils h3 {
+    font-size: 1.25rem;
+    margin-left: 1rem;
   }
 }

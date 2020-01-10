@@ -55,13 +55,13 @@
     <div class="middle-single">
       <div class="ingredients">
         <div class="top-ingredients">
-          <i class="fas fa-list"></i>
+          <i class="fas fa-list fa-2x"></i>
           <h3>Ingrédients</h3>
         </div>
-        <div class="bottom-ingredients">
+        <div class="bottom-ingredients mt-5">
           <% if @recipe.ingredients.empty? %>
             <p>Vous n’avez pas encore ajouté d’ingrédient à votre recette.</p>
-            <%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary' %>
+            <%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary mt-5' %>
           <% else %>
             <ul><% @recipe.doses.each do |d| %>
               <li><%= Ingredient.find(id=d.ingredient_id).name %> - <%= d.description %> <%= link_to "Supprimer", recipe_dose_path(d), method: :delete, data: { confirm: "Are you sure?" } %> <%= link_to "Modifier", edit_recipe_dose_path(d) %></li>
@@ -73,10 +73,10 @@
       </div>
       <div class="utensils">
         <div class="top-utensils">
-          <i class="fas fa-utensils"></i>
+          <i class="fas fa-utensils fa-2x"></i>
           <h3>Ustensiles</h3>
         </div>
-        <div class="bottom-utensils">
+        <div class="bottom-utensils mt-5">
           <p><%= @recipe.ustensils %></p>
         </div>
       </div>
