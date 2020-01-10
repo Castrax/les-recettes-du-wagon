@@ -21,6 +21,7 @@ gem 'summernote-rails'
 gem 'bootstrap'
 gem 'turbolinks'
 gem 'coffee-rails'
+gem 'devise'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
