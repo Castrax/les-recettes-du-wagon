@@ -6,19 +6,26 @@
       <h2 class="single-title"><%= @recipe.title %></h2>
     </div>
     <div class="facts-single">
-      <div class="time">
-        <i class="far fa-clock"></i>
-        <p>Publié le <%= l(@recipe.created_at.utc, format: '%B %d, %Y') %></p>
+      <div class="left-side">
+        <div class="time">
+          <i class="far fa-clock"></i>
+          <p>Publié le <%= l(@recipe.created_at.utc, format: '%B %d, %Y') %></p>
+        </div>
+        <div class="author">
+          <i class="far fa-user"></i>
+          <p>par <%= User.find(@recipe.user_id).surnom %></p>
+        </div>
       </div>
-      <div class="author">
-        <i class="far fa-user"></i>
-        <p>#</p>
+      <div class="right-side">
+        <div class="likes">
+          <i class="far fa-heart"></i>
+          <%= simple_form_for @recipe, class: "recipe_form" do |f| %>
+            <%= f.input :rating, collection: (1..5).to_a, label: "Notez la recette" %>
+            <%= f.submit "Envoyer la note", class: "d-none" %>
+          <% end %>
+        </div>
       </div>
-      <div class="likes">
-        <i class="far fa-heart"></i>
-        <p>#</p>
-      </div>
-    </div>
+  </div>
     <div class="description">
       <p><%= @recipe.description %></p>
     </div>

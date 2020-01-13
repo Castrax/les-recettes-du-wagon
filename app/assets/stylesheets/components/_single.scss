@@ -36,9 +36,12 @@
 
 .facts-single {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   margin-top: 1.5rem;
+  .left-side {
+    display: inline-flex;
+  }
   .time, .author, .likes {
     display: flex;
     justify-content: center;
