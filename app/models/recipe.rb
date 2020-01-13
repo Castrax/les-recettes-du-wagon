@@ -12,4 +12,5 @@ class Recipe < ApplicationRecord
   validates :total_time, presence: true
   validates :season, presence: true
   validates :ustensils, presence: true
+  searchkick
 end

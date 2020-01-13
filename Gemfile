@@ -23,6 +23,7 @@ gem 'turbolinks'
 gem 'coffee-rails'
 gem 'devise'
 gem 'pundit'
+gem 'searchkick'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
