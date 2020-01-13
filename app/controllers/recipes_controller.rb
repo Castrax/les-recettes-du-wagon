@@ -3,8 +3,13 @@ class RecipesController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @recipes = policy_scope(Recipe).order(created_at: :desc)
-    authorize Recipe
+    if params[:search]
+      @recipes = policy_scope(Recipe).order(created_at: :desc).search(params[:search][:query])
+      authorize Recipe
+    else
+      @recipes = policy_scope(Recipe).order(created_at: :desc)
+      authorize Recipe
+    end
   end
 
   def show
