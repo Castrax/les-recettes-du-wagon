@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.recipes.new
     @ingredient = Ingredient.new
     authorize @recipe
   end
@@ -23,9 +23,9 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipes.new(recipe_params)
     authorize @recipe
-    @recipe.save
+    @recipe.save!
     redirect_to recipes_path
   end
 

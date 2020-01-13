@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates :prenom, presence: true
   validates :nom, presence: true
   validates :surnom, presence: true
+  has_many :recipes, dependent: :destroy
 end

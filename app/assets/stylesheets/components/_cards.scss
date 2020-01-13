@@ -48,7 +48,12 @@
     justify-content: center;
     align-items: center;
   }
-  .time, .author, .likes p {
+  .author p {
+    margin-bottom: 0;
+    margin-left: 0.25rem;
+    color: black;
+  }
+  .time, .likes p {
     margin-bottom: 0;
     margin-left: 0.25rem;
     color: black;

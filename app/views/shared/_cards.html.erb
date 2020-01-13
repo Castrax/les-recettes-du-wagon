@@ -17,7 +17,7 @@
             </div>
             <div class="author">
               <i class="far fa-user"></i>
-              <p>#</p>
+              <p class="user-author">par <%= User.find(recipe.user_id).surnom %></p>
             </div>
             <div class="likes">
               <i class="far fa-heart"></i>
