@@ -24,6 +24,7 @@ gem 'coffee-rails'
 gem 'devise'
 gem 'pundit'
 gem 'searchkick'
+gem 'acts_as_votable'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

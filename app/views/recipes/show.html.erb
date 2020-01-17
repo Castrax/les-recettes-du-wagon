@@ -17,12 +17,23 @@
         </div>
       </div>
       <div class="right-side">
-        <div class="likes">
-          <i class="far fa-heart"></i>
-          <%= simple_form_for @recipe, class: "recipe_form" do |f| %>
-            <%= f.input :rating, collection: (1..5).to_a, label: "Notez la recette" %>
-            <%= f.submit "Envoyer la note", class: "d-none" %>
-          <% end %>
+        <div class="parent-likes">
+          <div class="like_count" <%=@recipe.id%> >
+            <%= @recipe.get_likes.size %> &#128591
+          </div>
+          <a>
+            <% if current_user.liked? @recipe %>
+              <div>
+                <%= link_to like_recipe_path(@recipe, 'unlike'), class: 'liked-btn', method: :put, remote: :true do %> Liked
+              </div>
+              <% end %>
+            <% else %>
+              <div>
+                <%= link_to like_recipe_path(@recipe, 'like'), class: 'like-btn', method: :put, remote: :true do %> Like
+              </div>
+              <% end %>
+            <% end %>
+          </a>
         </div>
       </div>
   </div>

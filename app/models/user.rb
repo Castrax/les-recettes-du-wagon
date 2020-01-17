@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :surnom, presence: true
   has_many :recipes, dependent: :destroy
   searchkick
+  acts_as_voter
 end

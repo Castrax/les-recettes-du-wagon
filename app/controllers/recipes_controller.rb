@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
   after_action :verify_authorized
+  respond_to :js, :html, :json
 
   def index
     if params[:search]
@@ -46,6 +47,15 @@ class RecipesController < ApplicationController
     authorize @recipe
     @recipe.destroy
     redirect_to recipes_path
+  end
+
+  def like
+    @recipe = Recipe.find(params[:id])
+    if params[:format] == 'like'
+      @recipe.liked_by current_user
+    elsif params[:format] == 'unlike'
+      @recipe.unliked_by current_user
+    end
   end
 
   private

@@ -13,4 +13,5 @@ class Recipe < ApplicationRecord
   validates :season, presence: true
   validates :ustensils, presence: true
   searchkick
+  acts_as_votable
 end
