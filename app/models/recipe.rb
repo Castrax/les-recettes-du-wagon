@@ -1,6 +1,7 @@
 class Recipe < ApplicationRecord
   has_many :doses, dependent: :destroy
   has_many :ingredients, through: :doses
+  has_many :likes, dependent: :destroy
   has_many_attached :photos
   belongs_to :user
   validates :title, presence: true
@@ -13,5 +14,4 @@ class Recipe < ApplicationRecord
   validates :season, presence: true
   validates :ustensils, presence: true
   searchkick
-  acts_as_votable
 end

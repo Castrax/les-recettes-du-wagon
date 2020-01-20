@@ -21,7 +21,7 @@
             </div>
             <div class="likes">
               <i class="far fa-heart"></i>
-              <p>#</p>
+              <p><%= recipe.likes.count %> <%= (recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>
             </div>
           </div>
         </div>
