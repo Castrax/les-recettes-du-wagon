@@ -49,15 +49,6 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
-  def like
-    @recipe = Recipe.find(params[:id])
-    if params[:format] == 'like'
-      @recipe.liked_by current_user
-    elsif params[:format] == 'unlike'
-      @recipe.unliked_by current_user
-    end
-  end
-
   private
 
   def recipe_params
