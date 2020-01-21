@@ -1,0 +1,28 @@
+.parent-likes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-transform: capitalize;
+  font-weight: 200;
+  background-color: #EBEBEB;
+  color: #646464;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  transition: all 0.3s ease-out;
+  .unlike-heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.9rem;
+    font-transform: capitalize;
+    font-weight: 200;
+    background-color: #EBEBEB;
+    color: #646464;
+  }
+  .like-heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.9rem;
+  }
+}

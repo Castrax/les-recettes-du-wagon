@@ -18,12 +18,20 @@
       </div>
       <div class="right-side">
         <div class="parent-likes">
-          <p><%= @recipe.likes.count %> <%= (@recipe.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+          <div class="number-likes">
+            <%= pluralize @recipe.likes.size, "like" %>
+          </div>
           <% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
           <% if pre_like %>
-            <%= button_to 'Unlike', recipe_like_path(@recipe, pre_like), method: :delete %>
+            <div class="like-heart">
+              <i class="far fa-heart"></i>
+              <%= button_to 'Unlike me', recipe_like_path(@recipe, pre_like), method: :delete, class: 'btn unlike-button' %>
+            </div>
           <% else %>
-            <%= button_to 'Like', recipe_likes_path(@recipe), method: :post %>
+            <div class="unlike-heart">
+              <i class="fas fa-heart"></i>
+              <%= button_to 'Like me', recipe_likes_path(@recipe), method: :post, class: 'btn like-button' %>
+            </div>
           <% end %>
         </div>
       </div>
