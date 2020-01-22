@@ -101,18 +101,19 @@
     <div class="bottom-single">
       <%= render 'shared/preparations' %>
     </div>
+    <div class="bottom-admin">
+      <div class="delete-recipe">
+        <% if policy(@recipe).destroy? %>
+          <%= link_to "Supprimer la recette", recipe_path(@recipe),
+              method: :delete,
+              data: { confirm: "Are you sure?", id: 'sweet-alert-demo' }, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+      <div class="edit-recipe">
+        <% if policy(@recipe).edit? %>
+          <%= link_to "Modifier la recette", edit_recipe_path(@recipe), class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
-<p>
-  <% if policy(@recipe).destroy? %>
-    <%= link_to "Supprimer la recette", recipe_path(@recipe),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-  <% end %>
-</p>
-<p>
-  <% if policy(@recipe).edit? %>
-    <%= link_to "Modifier la recette", edit_recipe_path(@recipe) %>
-  <% end %>
-</p>
