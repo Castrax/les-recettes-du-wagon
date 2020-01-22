@@ -31,15 +31,21 @@ class RecipesController < ApplicationController
   def create
     @recipe = current_user.recipes.new(recipe_params)
     authorize @recipe
-    @recipe.save!
-    redirect_to recipes_path
+    if @recipe.save
+      redirect_to recipes_path
+    else
+      render :new
+    end
   end
 
   def update
     @recipe = Recipe.find(params[:id])
     authorize @recipe
-    @recipe.update(recipe_params)
-    redirect_to recipes_path
+    if @recipe.update(recipe_params)
+      redirect_to recipes_path
+    else
+      render :edit
+    end
   end
 
   def destroy

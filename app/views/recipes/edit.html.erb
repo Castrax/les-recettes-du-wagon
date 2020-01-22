@@ -1,14 +1,22 @@
-<h2>Éditer la recette</h2>
-<%= simple_form_for @recipe do |f| %>
- <%= f.input :title %>
- <%= f.input :description %>
- <%= f.input :kitchen_type %>
- <%= f.input :difficulty, collection: ["facile", "moyen", "difficile"] %>
- <%= f.input :cost, collection: ["éco", "moyen", "cher"] %>
- <%= f.input :preparation, as: :text %>
- <%= f.input :total_time, as: :time %>
- <%= f.input :season, collection: ["printemps", "été", "automne", "hiver"] %>
- <%= f.input :ustensils %>
- <%= f.input :photos, as: :file, input_html: { multiple: true } %>
- <%= f.submit "Modifier la recette", class: "btn btn-primary" %>
-<% end %>
+<div class="banner" style="background-image: url(https://source.unsplash.com/R7FA5a7Itnw);">
+</div>
+<div class="container">
+  <div class="layout-new">
+    <h2 class="title-new-recipe mt-4 mb-5">Éditer la recette</h2>
+      <%= simple_form_for @recipe, defaults: { input_html: { class: 'needs-validation' } } do |f| %>
+        <%= f.input :title, label: 'Titre', placeholder: 'Ex : Tacos de Pollo Pibil', error: 'Veuillez rédiger un titre.' %>
+        <%= f.input :description, placeholder: 'Ex : Blancs de volaille marinés à la sauce pibil...', error: 'Veuillez rédiger une description.' %>
+        <%= f.input :kitchen_type, label: 'Catégorie ou type de cuisine', placeholder: 'Mexicain', collection: ["Halal", "Petit déjeuner", "Végétarien", "Mexicain", "Dessert", "Indien", "Grec", "Japonais", "Chinois", "Cambodgien", "Vietnamien", "Thaïlandais", "Asiatique", "Libanais", "Américain", "Italien", "Français", "Healthy"], error: 'Veuillez sélectionner un type de cuisine.' %>
+        <%= f.input :difficulty, label: 'Difficulté', collection: ["Facile", "Moyen", "Difficile"], error: "Veuillez sélectionner un niveau de difficulté." %>
+        <%= f.input :cost, label: 'Coût', collection: ["€", "€€", "€€€"], error: "Veuillez sélectionner un niveau de coût." %>
+        <%= f.input :preparation, label: 'Étapes de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' %>
+        <%= f.input :total_time, label: 'Temps total de préparation', as: :time, error: 'Veuillez sélectionner un délai de préparation.' %>
+        <%= f.input :season, label: 'Saison', collection: ["Printemps", "Été", "Automne", "Hiver"], error: 'Veuillez sélectionner une saison.' %>
+        <%= f.input :ustensils, label: 'Ustensiles', error: 'Veuillez ajouter des ustensiles de cuisine.' %>
+         <div class="custom-file">
+           <%= f.input :photos, as: :file, label: 'Sélectionner des fichiers', class:'custom-file-input', id:'customFile', input_html: { multiple: true }, error: 'Veuillez ajouter plusieurs photos.' %>
+         </div>
+         <%= f.submit "Modifier la recette", class: "btn btn-primary button-add-recipe" %>
+      <% end %>
+  </div>
+</div>

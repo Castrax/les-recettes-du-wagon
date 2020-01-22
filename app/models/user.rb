@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :prenom, presence: true
   validates :nom, presence: true
   validates :surnom, presence: true
+  validates :email, presence: true, uniqueness: true
   has_many :recipes, dependent: :destroy
   has_many :likes, dependent: :destroy
   searchkick
