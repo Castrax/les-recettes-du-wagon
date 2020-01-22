@@ -6,20 +6,17 @@
       <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= image_tag "https://source.unsplash.com/aZOqcEK2KuQ/1170x546", class: "d-block w-100"%>
-        <div class="carousel-caption caption-recetas d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <% @recipes.each_with_index do |recipe, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+          <%= cl_image_tag recipe.photos.first.key, height: 518, width: 1110, crop: :fill, class: "d-block w-100" %>
+          <div class="carousel-caption carousel-home caption-recetas d-none d-md-block">
+            <p class="home-kitchen"><%= recipe.kitchen_type %></p>
+            <h2 class="home-title"><%= recipe.title %></h2>
+            <p class="home-description"><%= recipe.description %></p>
+            <%= link_to "Voir la recette", recipe_path(recipe), class: "btn btn-primary"  %>
+          </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "https://source.unsplash.com/JiRSy0GfqPA/1170x546", class: "d-block w-100"%>
-        <div class="carousel-caption caption-recetas d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
+      <% end %>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>

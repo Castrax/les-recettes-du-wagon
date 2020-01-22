@@ -2,3 +2,23 @@
 body {
   background-color: white;
 }
+
+.home-kitchen {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: $pink;
+}
+
+.home-title {
+  font-size: 1.5rem;
+}
+
+.home-description {
+  font-size: 0.8rem;
+}
+
+.carousel-home {
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
