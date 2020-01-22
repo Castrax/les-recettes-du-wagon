@@ -1,0 +1,115 @@
+<div class="preparations">
+  <div class="preparations-title mt-5">
+    <h3>Suivez les instructions</h3>
+  </div>
+  <div class="steps">
+    <div class="step1">
+      <div class="serial-number">
+        <span>Étape</span>
+        <div class="step-number">1</div>
+      </div>
+      <div class="content-item">
+        <p><%= @recipe.step1 %></p>
+      </div>
+    </div>
+    <% unless @recipe.step2.nil? || @recipe.step2 == "" %>
+      <div class="step2">
+        <div class="serial-number">
+          <span>Étape</span>
+          <div class="step-number">2</div>
+        </div>
+        <div class="content-item">
+          <p><%= @recipe.step2 %></p>
+        </div>
+      </div>
+    <% end %>
+    <% unless @recipe.step3.nil? || @recipe.step3 == "" %>
+      <div class="step3">
+        <div class="serial-number">
+          <span>Étape</span>
+          <div class="step-number">3</div>
+        </div>
+        <div class="content-item">
+          <p><%= @recipe.step3 %></p>
+        </div>
+      </div>
+    <% end %>
+    <% unless @recipe.step4.nil? || @recipe.step4 == "" %>
+      <div class="step4">
+        <div class="serial-number">
+          <span>Étape</span>
+          <div class="step-number">4</div>
+        </div>
+        <div class="content-item">
+          <p><%= @recipe.step4 %></p>
+        </div>
+      </div>
+    <% end %>
+    <% unless @recipe.step5.nil? || @recipe.step5 == "" %>
+      <div class="step5">
+        <div class="serial-number">
+          <span>Étape</span>
+          <div class="step-number">5</div>
+        </div>
+        <div class="content-item">
+          <p><%= @recipe.step5 %></p>
+        </div>
+      </div>
+    <% end %>
+    <% unless @recipe.step6.nil? || @recipe.step6 == "" %>
+      <div class="step6">
+        <div class="serial-number">
+          <span>Étape</span>
+          <div class="step-number">6</div>
+        </div>
+        <div class="content-item">
+          <p><%= @recipe.step6 %></p>
+        </div>
+      </div>
+    <% end %>
+    <% unless @recipe.step7.nil? || @recipe.step7 == "" %>
+      <div class="step7">
+        <div class="serial-number">
+          <span>Étape</span>
+          <div class="step-number">7</div>
+        </div>
+        <div class="content-item">
+          <p><%= @recipe.step7 %></p>
+        </div>
+      </div>
+    <% end %>
+    <% unless @recipe.step8.nil? || @recipe.step8 == "" %>
+      <div class="step8">
+        <div class="serial-number">
+          <span>Étape</span>
+          <div class="step-number">8</div>
+        </div>
+        <div class="content-item">
+          <p><%= @recipe.step8 %></p>
+        </div>
+      </div>
+    <% end %>
+    <% unless @recipe.step9.nil? || @recipe.step9 == "" %>
+      <div class="step9">
+        <div class="serial-number">
+          <span>Étape</span>
+          <div class="step-number">9</div>
+        </div>
+        <div class="content-item">
+          <p><%= @recipe.step9 %></p>
+        </div>
+      </div>
+    <% end %>
+    <% unless @recipe.step10.nil? || @recipe.step10 == "" %>
+      <div class="step10">
+        <div class="serial-number">
+          <span>Étape</span>
+          <div class="step-number">10</div>
+        </div>
+        <div class="content-item">
+          <p><%= @recipe.step10 %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

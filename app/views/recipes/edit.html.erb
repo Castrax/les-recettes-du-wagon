@@ -2,34 +2,38 @@
 </div>
 <div class="container">
   <div class="layout-new">
-    <h2 class="title-new-recipe mt-4 mb-5">Ajouter une recette</h2>
+    <h2 class="title-new-recipe mt-4 mb-5">Éditer la recette</h2>
     <%= simple_form_for @recipe do |f| %>
      <%= f.input :title, label: 'Titre', placeholder: 'Ex : Tacos de Pollo Pibil', error: 'Veuillez rédiger un titre.' %>
      <%= f.input :description, placeholder: 'Ex : Blancs de volaille marinés à la sauce pibil...', error: 'Veuillez rédiger une description.' %>
      <%= f.input :kitchen_type, label: 'Catégorie ou type de cuisine', placeholder: 'Mexicain', collection: ["Halal", "Petit déjeuner", "Végétarien", "Mexicain", "Dessert", "Indien", "Grec", "Japonais", "Chinois", "Cambodgien", "Vietnamien", "Thaïlandais", "Asiatique", "Libanais", "Américain", "Italien", "Français", "Healthy"], error: 'Veuillez sélectionner un type de cuisine.' %>
      <%= f.input :difficulty, label: 'Difficulté', collection: ["Facile", "Moyen", "Difficile"], error: "Veuillez sélectionner un niveau de difficulté." %>
      <%= f.input :cost, label: 'Coût', collection: ["€", "€€", "€€€"], error: "Veuillez sélectionner un niveau de coût." %>
-     <%= f.input :step1, label: 'Étape 1 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' %>
-     <%= f.input :step2, label: 'Étape 2 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step3, label: 'Étape 3 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step4, label: 'Étape 4 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step5, label: 'Étape 5 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step6, label: 'Étape 6 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step7, label: 'Étape 7 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step8, label: 'Étape 8 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step9, label: 'Étape 9 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step10, label: 'Étape 10 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step11, label: 'Étape 11 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step12, label: 'Étape 12 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step13, label: 'Étape 13 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step14, label: 'Étape 14 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :step15, label: 'Étape 15 de préparation', as: :summernote, error: 'Veuillez rédiger les étapes de préparation.' input_html: { class: 'd-none' } %>
-     <%= f.input :total_time, label: 'Temps total de préparation', as: :time, error: 'Veuillez sélectionner un délai de préparation.' %>
+     <%= f.input :step1, as: :text, label: 'Étape 1 de préparation', error: 'Veuillez rédiger les étapes de préparation.' %>
+     <%= f.button :button, "Ajouter une étape", class: 'btn btn-primary add-step2' %>
+     <%= f.input :step2, label: 'Étape 2 de préparation', as: :text, wrapper_html: { class: 'd-none' } %>
+     <%= f.button :button, "Ajouter une étape", class: 'btn btn-primary add-step3 d-none' %>
+     <%= f.input :step3, label: 'Étape 3 de préparation', as: :text, wrapper_html: { class: 'd-none' } %>
+     <%= f.button :button, "Ajouter une étape", class: 'btn btn-primary add-step4 d-none' %>
+     <%= f.input :step4, label: 'Étape 4 de préparation', as: :text, wrapper_html: { class: 'd-none' } %>
+     <%= f.button :button, "Ajouter une étape", class: 'btn btn-primary add-step5 d-none' %>
+     <%= f.input :step5, label: 'Étape 5 de préparation', as: :text, wrapper_html: { class: 'd-none' } %>
+     <%= f.button :button, "Ajouter une étape", class: 'btn btn-primary add-step6 d-none' %>
+     <%= f.input :step6, label: 'Étape 6 de préparation', as: :text, wrapper_html: { class: 'd-none' } %>
+     <%= f.button :button, "Ajouter une étape", class: 'btn btn-primary add-step7 d-none' %>
+     <%= f.input :step7, label: 'Étape 7 de préparation', as: :text, wrapper_html: { class: 'd-none' } %>
+     <%= f.button :button, "Ajouter une étape", class: 'btn btn-primary add-step8 d-none' %>
+     <%= f.input :step8, label: 'Étape 8 de préparation', as: :text, wrapper_html: { class: 'd-none' } %>
+     <%= f.button :button, "Ajouter une étape", class: 'btn btn-primary add-step9 d-none' %>
+     <%= f.input :step9, label: 'Étape 9 de préparation', as: :text, wrapper_html: { class: 'd-none' } %>
+     <%= f.button :button, "Ajouter une étape", class: 'btn btn-primary add-step10 d-none' %>
+     <%= f.input :step10, label: 'Étape 10 de préparation', as: :text, wrapper_html: { class: 'd-none' } %>
+     <%= f.input :total_time, label: 'Temps total de préparation', as: :time, error: 'Veuillez sélectionner un délai de préparation.', wrapper_html: { class: 'mt-4' } %>
      <%= f.input :season, label: 'Saison', collection: ["Printemps", "Été", "Automne", "Hiver"], error: 'Veuillez sélectionner une saison.' %>
      <%= f.input :ustensils, label: 'Ustensiles', error: 'Veuillez ajouter des ustensiles de cuisine.' %>
      <%= f.input :photos, as: :file, label_html: { class: 'upload-photo mt-3'}, label: '📷 Téléchargez des photos', input_html: { class: 'd-none', id: 'photo-input', multiple: true }, error: 'Veuillez ajouter plusieurs photos.' %>
      <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-     <%= f.submit "Ajouter la recette", class: "btn btn-primary button-add-recipe" %>
+     <%= f.submit "Modifier la recette", class: "btn btn-primary button-add-recipe" %>
     <% end %>
   </div>
 </div>

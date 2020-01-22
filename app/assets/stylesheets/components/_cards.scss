@@ -10,20 +10,20 @@
 
 .card-body {
   text-align: center;
-  .kitchen-type {
+  .kitchen-type-card {
     font-weight: 800;
     text-transform: uppercase;
     font-size: 0.75rem;
     color: $pink;
   }
-  .season {
+  .season-card {
     font-weight: 300;
     font-size: 1rem;
     text-transform: capitalize;
     font-style: italic;
     color: $pink;
   }
-  .description {
+  .description-card {
     color: black;
     font-weight: 300;
     font-size: 0.9rem;
