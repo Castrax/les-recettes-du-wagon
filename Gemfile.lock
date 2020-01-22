@@ -42,7 +42,6 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    acts_as_votable (0.12.1)
     arel (9.0.0)
     autoprefixer-rails (9.7.3)
       execjs
@@ -55,6 +54,9 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     builder (3.2.4)
     byebug (11.0.1)
     cloudinary (1.13.1)
@@ -255,10 +257,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts_as_votable
   autoprefixer-rails
   bootsnap
   bootstrap
+  bootstrap-sass
   cloudinary
   coffee-rails
   devise
@@ -269,6 +271,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   pg (~> 0.21)
+  popper_js
   pry-byebug
   pry-rails
   puma
@@ -280,7 +283,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
-  summernote-rails
+  summernote-rails (~> 0.8.12.0)
   turbolinks
   uglifier
   web-console (>= 3.3.0)

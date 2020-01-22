@@ -5,10 +5,10 @@
         <%= cl_image_tag recipe.photos.first.key, height: 272, width: 370, crop: :fill, class: 'card-img-top' %>
         <div class="card-body">
           <div class="card-top">
-            <p class="kitchen-type"><%= recipe.kitchen_type %></p>
+            <p class="kitchen-type-card"><%= recipe.kitchen_type %></p>
             <h3 class="card-text"><%= recipe.title %></h3>
-            <p class="season"><%= recipe.season %></p>
-            <p class="description"><%= recipe.description %></p>
+            <p class="season-card"><%= recipe.season %></p>
+            <p class="description-card"><%= recipe.description %></p>
           </div>
           <div class="card-bottom">
             <div class="time">

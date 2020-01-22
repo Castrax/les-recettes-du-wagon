@@ -7,9 +7,9 @@ class Recipe < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :kitchen_type, presence: true
+  validates :step1, presence: true
   validates :difficulty, presence: true
   validates :cost, presence: true
-  validates :preparation, presence: true
   validates :total_time, presence: true
   validates :season, presence: true
   validates :ustensils, presence: true
