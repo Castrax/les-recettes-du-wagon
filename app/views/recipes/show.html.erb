@@ -78,13 +78,12 @@
         <div class="bottom-ingredients mt-5">
           <% if @recipe.ingredients.empty? %>
             <p>Vous n’avez pas encore ajouté d’ingrédient à votre recette.</p>
-            <%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary mt-5' %>
+            <%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary mt-5', data: { toggle: 'modal', target: '#modalDoses' } %>
           <% else %>
-            <ul><% @recipe.doses.each do |d| %>
-              <li><%= Ingredient.find(id=d.ingredient_id).name %> - <%= d.description %> <%= link_to "Supprimer", recipe_dose_path(d), method: :delete, data: { confirm: "Are you sure?" } %> <%= link_to "Modifier", edit_recipe_dose_path(d) %></li>
-            </ul>
-            <p><%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe) %></p>
+            <% @recipe.doses.each do |d| %>
+              <p d-id="<%= d.id %>"><%= Ingredient.find(id=d.ingredient_id).name %> - <%= d.description %> <%= link_to "Supprimer", recipe_dose_path(d), method: :delete, data: { confirm: "Are you sure?" }, remote: true %> <%= link_to "Modifier", edit_recipe_dose_path(d), data: { toggle: 'modal', target: '#modalDoses' } %></p>
             <% end %>
+            <p><%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary mt-5', data: { toggle: 'modal', target: '#modalDoses' } %></p>
           <% end %>
         </div>
       </div>
@@ -117,3 +116,5 @@
     </div>
   </div>
 </div>
+<%= render 'shared/modal-doses' %>
+<%= render 'shared/modal-ingredients' %>

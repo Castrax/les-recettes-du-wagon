@@ -1,4 +1,6 @@
 class DosesController < ApplicationController
+  skip_after_action :verify_authorized
+
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @dose = Dose.new

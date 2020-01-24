@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :likes
     resources :doses
   end
+  resources :ingredients
 end

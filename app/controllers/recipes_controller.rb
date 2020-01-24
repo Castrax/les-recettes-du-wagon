@@ -15,12 +15,13 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @dose = Dose.new
+    @ingredient = Ingredient.new
     authorize @recipe
   end
 
   def new
     @recipe = current_user.recipes.new
-    @ingredient = Ingredient.new
     authorize @recipe
   end
 
@@ -53,7 +54,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     authorize @recipe
     @recipe.destroy
-    redirect_to recipes_path
   end
 
   private

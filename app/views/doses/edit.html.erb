@@ -1,7 +1,0 @@
-<h2>Modifier la portion (pour une personne)</h2>
-<%= simple_form_for [@recipe, @dose] do |f| %>
- <%= f.input :description %>
- <%= f.association :ingredient %>
- <%= f.submit "Modifier la portion", class: "btn btn-primary" %>
-<% end %>
-

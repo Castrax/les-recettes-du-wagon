@@ -1,9 +1,9 @@
 //= require popper
 //= require jquery
 //= require bootstrap
-//= require jquery_ujs
 //= require summernote/summernote-bs4.min
 //= require summernote-init
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery_ujs
