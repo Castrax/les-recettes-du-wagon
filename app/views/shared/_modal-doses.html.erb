@@ -10,7 +10,7 @@
       <div class="modal-body">
         <%= simple_form_for [@recipe, @dose] do |f| %>
          <%= f.input :description, label: "Description de la portion", placeholder: 'Ex : 50 grammes de', error: 'Veuillez ajouter une portion' %>
-         <%= f.association :ingredient, label: 'Sélectionnez un ingrédient', error: "Veuillez sélectionner un ingrédient"  %>
+         <%= f.association :ingredient, as: :select, label: 'Sélectionnez un ingrédient', error: "Veuillez sélectionner un ingrédient", input_html:  { class: "select2" }  %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
