@@ -43,7 +43,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (9.0.0)
-    autoprefixer-rails (9.7.3)
+    autoprefixer-rails (9.7.4)
       execjs
     aws_cf_signer (0.1.3)
     bcrypt (3.1.13)
@@ -55,8 +55,8 @@ GEM
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
     builder (3.2.4)
-    byebug (11.0.1)
-    cloudinary (1.13.1)
+    byebug (11.1.1)
+    cloudinary (1.13.2)
       aws_cf_signer
       rest-client
     coderay (1.1.2)
@@ -68,7 +68,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
-    crass (1.0.5)
+    crass (1.0.6)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -91,11 +91,11 @@ GEM
       multi_json
     erubi (1.9.0)
     execjs (2.7.0)
-    faker (2.10.0)
-      i18n (>= 1.6, < 1.8)
+    faker (2.10.1)
+      i18n (>= 1.6, < 2)
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
-    ffi (1.11.3)
+    ffi (1.12.1)
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
     globalid (0.4.2)
@@ -104,7 +104,7 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (1.7.0)
+    i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
@@ -129,7 +129,7 @@ GEM
     mimemagic (0.3.3)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.13.0)
+    minitest (5.14.0)
     msgpack (1.3.1)
     multi_json (1.14.1)
     multipart-post (2.1.1)
@@ -139,11 +139,11 @@ GEM
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
-    popper_js (1.14.5)
+    popper_js (1.16.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    pry-byebug (3.7.0)
+    pry-byebug (3.8.0)
       byebug (~> 11.0)
       pry (~> 0.10)
     pry-rails (0.3.9)
@@ -152,7 +152,7 @@ GEM
       nio4r (~> 2.0)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
-    rack (2.0.8)
+    rack (2.1.1)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -206,6 +206,8 @@ GEM
       activemodel (>= 5)
       elasticsearch (>= 6)
       hashie
+    select2-rails (4.0.3)
+      thor (~> 0.14)
     simple_form (5.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -222,7 +224,7 @@ GEM
       sprockets (>= 3.0.0)
     summernote-rails (0.8.12.0)
       railties (>= 3.1)
-    thor (1.0.1)
+    thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -276,6 +278,7 @@ DEPENDENCIES
   redis
   sassc-rails
   searchkick
+  select2-rails
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)

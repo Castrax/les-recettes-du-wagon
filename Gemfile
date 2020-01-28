@@ -25,6 +25,7 @@ gem 'pundit'
 gem 'searchkick'
 gem 'summernote-rails', '~> 0.8.12.0'
 gem 'popper_js'
+gem 'select2-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
