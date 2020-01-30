@@ -9,5 +9,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   has_many :recipes, dependent: :destroy
   has_many :likes, dependent: :destroy
+  has_one_attached :photo
   searchkick
 end

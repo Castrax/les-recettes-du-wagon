@@ -1,0 +1,43 @@
+<div class="banner" style="background-image: url(https://source.unsplash.com/08bOYnH_r_E);">
+</div>
+<div class="container">
+  <div class="layout-profile">
+    <div class="profile-infos">
+      <div class="left-infos">
+        <div class="author-infos">
+          <% if @user.photo.attached? %>
+            <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :thumb, gravity: :face, class: 'photo-user' %>
+          <% else %>
+            <%= cl_image_tag("unknown_lzdnzr", width: 150, height: 150, crop: :fill, class: 'unknown-user') %>
+          <% end %>
+          <div class="names">
+            <h2><%= @user.prenom %> <%= @user.nom %></h2>
+            <p><%= @user.surnom %></p>
+          </div>
+        </div>
+      </div>
+      <div class="right-infos">
+        <div class="recettes-bubble">
+          <div class="bubble">
+            <%= @user.recipes.count %>
+          </div>
+          <p>recettes</p>
+        </div>
+        <div class="likes-bubble">
+          <div class="bubble">
+            <%= @user.likes.count %>
+          </div>
+          <p>likes</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="profile-likes">
+      <h3>Mes likes</h3>
+      <%= render 'shared/cards' %>
+    </div> -->
+    <div class="profile-recipes">
+      <h3>Mes recettes</h3>
+      <%= render 'shared/cards' %>
+    </div>
+  </div>
+</div>
