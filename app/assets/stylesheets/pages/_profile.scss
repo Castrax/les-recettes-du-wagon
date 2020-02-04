@@ -33,6 +33,12 @@
     display: flex;
     align-items: center;
     padding: 1.5rem;
+    .unknown-user {
+      position: relative;
+    }
+    .add-photo {
+      position: absolute;
+    }
     .unknown-user, .photo-user {
       border-radius: 50%;
     }
@@ -45,6 +51,11 @@
   }
 }
 
+.profile-recipes, .profile-likes {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .recettes-bubble, .likes-bubble {
   display: flex;
   justify-content: left;
@@ -54,7 +65,6 @@
 .recettes-bubble p, .likes-bubble p {
   margin-bottom: 0;
   line-height: 50px;
-  margin-left: 0.5rem;
 }
 
 .right-infos {
@@ -71,4 +81,13 @@
   line-height: 50px;
   color: white;
   font-weight: 800;
+}
+.word {
+  margin-left: 1rem;
+}
+
+.list-recipes-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
 }

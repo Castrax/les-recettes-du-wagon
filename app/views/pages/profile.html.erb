@@ -9,6 +9,10 @@
             <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :thumb, gravity: :face, class: 'photo-user' %>
           <% else %>
             <%= cl_image_tag("unknown_lzdnzr", width: 150, height: 150, crop: :fill, class: 'unknown-user') %>
+            <div class="add-photo">
+              <i class="fas fa-camera"></i>
+              <p>Ajouter une photo</p>
+            </div>
           <% end %>
           <div class="names">
             <h2><%= @user.prenom %> <%= @user.nom %></h2>
@@ -19,25 +23,39 @@
       <div class="right-infos">
         <div class="recettes-bubble">
           <div class="bubble">
-            <%= @user.recipes.count %>
+            <p><%= @user.recipes.count %></p>
           </div>
-          <p>recettes</p>
+          <div class="word">
+            <% word = "recette" %>
+            <% if @user.recipes.count > 1 %>
+              <p><%= word.pluralize %></p>
+            <% else %>
+              <p><%= word %></p>
+            <% end %>
+          </div>
         </div>
         <div class="likes-bubble">
           <div class="bubble">
-            <%= @user.likes.count %>
+            <p><%= @user.likes.count %></p>
           </div>
-          <p>likes</p>
+          <div class="word">
+            <% word = "like" %>
+            <% if @user.recipes.count > 1 %>
+              <p><%= word.pluralize %></p>
+            <% else %>
+              <p><%= word %></p>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-    <!-- <div class="profile-likes">
+    <div class="profile-likes mt-5">
       <h3>Mes likes</h3>
-      <%= render 'shared/cards' %>
-    </div> -->
-    <div class="profile-recipes">
+      <%= render 'shared/cards-profile-likes' %>
+    </div>
+    <div class="profile-recipes mt-5">
       <h3>Mes recettes</h3>
-      <%= render 'shared/cards' %>
+      <%= render 'shared/cards-profile-recipes' %>
     </div>
   </div>
 </div>
