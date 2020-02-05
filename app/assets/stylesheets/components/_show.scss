@@ -156,7 +156,8 @@
   .photo-show {
     object-fit: cover;
     display: block;
-    width: 100%
+    width: 100%;
+    height: 200px;
   }
   .layout-single {
     padding: 25px 25px 0;
@@ -198,23 +199,17 @@
     margin: 1rem auto;
     text-align: center;
   }
+  .characteristics-single > .total_time-single, .characteristics-single > .difficulty-single, .characteristics-single > .season-single, .characteristics-single > .cost-single  {
+    justify-content: left;
+    padding-left: 3rem;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@media (min-width: 100px) and (max-width: 575px) {
+  .characteristics-single {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+  }
 }
 

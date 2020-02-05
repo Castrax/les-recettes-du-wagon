@@ -1,3 +1,16 @@
-.form-inline .form-control {
-  width: 975px;
+.index-search {
+  width: 76vw;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 575px) {
+  .index-search {
+    width: 50vw;
+  }
+  .search-form-control {
+    display: inline-flex;
+  }
+  .list-recipes {
+    grid-template-columns: 1fr !important;
+  }
 }
