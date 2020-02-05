@@ -150,3 +150,71 @@
   justify-content: space-around;
   align-items: center;
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .photo-show {
+    object-fit: cover;
+    display: block;
+    width: 100%
+  }
+  .layout-single {
+    padding: 25px 25px 0;
+    transform: translateY(0);
+    margin-bottom: 0;
+    background-image: none;
+  }
+  .facts-single {
+    flex-direction: column-reverse;
+    .right-side {
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+  }
+  .characteristics-single {
+    grid-template-columns: 1fr;
+    grid-gap: 0.5rem;
+  }
+  .middle-single {
+    grid-template-columns: 1fr;
+    grid-gap: 0.5rem;
+  }
+  .step1, .step2, .step3, .step4, .step5, .step6, .step7, .step8, .step9, .step10 {
+    flex-direction: column;
+    margin-left: 0 !important;
+    margin-right : 0 !important;
+  }
+  .content-item {
+    margin-left: 0 !important;
+  }
+  .serial-number {
+    margin-bottom: 2rem;
+  }
+  .bottom-admin {
+    flex-direction: column;
+  }
+  .delete-recipe, .edit-recipe {
+    width: 100%;
+    margin: 1rem auto;
+    text-align: center;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+

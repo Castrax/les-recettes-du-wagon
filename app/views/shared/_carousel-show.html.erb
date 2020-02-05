@@ -1,13 +1,10 @@
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= cl_image_tag @recipe.photos.first.key, height: 416, width: 1280, crop: :fill %>
+  <% @recipe.photos.each_with_index do |photo, index| %>
+    <div class="carousel-item <%= 'active' if index == 0 %>">
+      <%= cl_image_tag photo.key, height: 416, width: 1280, crop: :fill, class: "photo-show" %>
     </div>
-    <% @recipe.photos.each do |photo| %>
-      <div class="carousel-item">
-        <%= cl_image_tag photo.key, height: 416, width: 1280, crop: :fill %>
-      </div>
-    <% end %>
+  <% end %>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

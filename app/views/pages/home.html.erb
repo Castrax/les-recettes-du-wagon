@@ -8,12 +8,15 @@
     <div class="carousel-inner">
       <% @recipes.each_with_index do |recipe, index| %>
           <div class="carousel-item <%= 'active' if index == 0 %>">
-          <%= cl_image_tag recipe.photos.first.key, height: 518, width: 1110, crop: :fill, class: "d-block w-100" %>
+          <%= cl_image_tag recipe.photos.first.key, height: 518, width: 1110, crop: :fill, class: "d-block w-100 thumbnail-hp" %>
           <div class="carousel-caption carousel-home caption-recetas d-none d-md-block">
             <p class="home-kitchen"><%= recipe.kitchen_type %></p>
             <h2 class="home-title"><%= recipe.title %></h2>
             <p class="home-description"><%= recipe.description %></p>
             <%= link_to "Voir la recette", recipe_path(recipe), class: "btn btn-primary"  %>
+          </div>
+          <div class="likes-block">
+            <p>Top recette</p>
           </div>
         </div>
       <% end %>
@@ -27,7 +30,4 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div>
-<div class="likes-block">
-  <p>Top recette</p>
 </div>

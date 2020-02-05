@@ -28,12 +28,15 @@ body {
 }
 
 .likes-block {
+  display: none;
   height: 30px;
   width: 100px;
   background-color: $pink;
   position: relative;
-  top: -230px;
-  right: -590px;
+  left: 50%;
+  margin-left: -50px;
+  top: 50%;
+  margin-top: -50px;
   z-index: 1;
   line-height: 30px;
 }
@@ -46,3 +49,36 @@ body {
   margin-bottom: 0;
   color: white;
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .thumbnail-hp {
+    object-fit: cover;
+  }
+  .caption-recetas {
+    display: block !important;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .thumbnail-hp {
+    object-fit: cover;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .thumbnail-hp {
+    object-fit: cover;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
