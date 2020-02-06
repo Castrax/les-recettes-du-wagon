@@ -5,15 +5,17 @@
     <div class="profile-infos">
       <div class="left-infos">
         <div class="author-infos">
-          <% if @user.photo.attached? %>
-            <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :thumb, gravity: :face, class: 'photo-user' %>
-          <% else %>
-            <%= cl_image_tag("unknown_lzdnzr", width: 150, height: 150, crop: :fill, class: 'unknown-user') %>
+          <div class="profile-image">
+            <% if @user.photo.attached? %>
+              <%= cl_image_tag @user.photo.key, height: 300, width: 300, crop: :thumb, gravity: :face, class: 'photo-user' %>
+            <% else %>
+              <%= cl_image_tag("unknown_lzdnzr", width: 150, height: 150, crop: :fill, class: 'unknown-user') %>
+          <% end %>
             <div class="add-photo">
               <i class="fas fa-camera"></i>
               <p>Ajouter une photo</p>
             </div>
-          <% end %>
+          </div>
           <div class="names">
             <h2><%= @user.prenom %> <%= @user.nom %></h2>
             <p><%= @user.surnom %></p>

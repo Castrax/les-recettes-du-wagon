@@ -14,3 +14,12 @@
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (min-width: 576px) {
+  .form-inline .form-control {
+    width: 70vw;
+  }
+  .list-recipes {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
