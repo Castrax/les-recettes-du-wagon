@@ -13,7 +13,7 @@ require 'nokogiri'
 # Recipe.create!({
 #   title: "Tacos",
 #   description: "Un taco est un antojito de la cuisine mexicaine qui se compose d'une tortilla de maïs repliée ou enroulée sur elle-même contenant presque toujours une garniture le plus souvent à base de viande, de sauce, d'oignon et de coriandre fraiche hachée",
-#   number_persons: 6,
+#   number_of_persons: 6,
 #   difficulty: "facile",
 #   cost: "éco",
 #   preparation: "Etape 1
@@ -39,7 +39,7 @@ require 'nokogiri'
 # Recipe.create!({
 #   title: "Guacamole",
 #   description: "Le guacamole est une préparation culinaire d'origine mexicaine faite à base d’avocat, de piment frais, de coriandre fraîche, d'oignons, de tomates, de jus de lime ou de citron, de sel et de poivre",
-#   number_persons: 5,
+#   number_of_persons: 5,
 #   difficulty: "facile",
 #   cost: "éco",
 #   preparation: "Etape 1
@@ -76,24 +76,18 @@ r1 = Recipe.create({
   title: "Tacos de pollo pibil",
   description: "Blancs de volaille marinés à la sauce pibil servi sur une tortilla de maïs.",
   difficulty: "facile",
+  number_of_persons: 3,
   cost: "€",
   season: "Été",
   ustensils: "1 couteau, 1 poêle",
   total_time: "2000-01-01 00:40:00",
   kitchen_type: "Mexicain",
-  user_id: 1,
-  step1: "Préchauffer le four à 240°
-Presser le jus de l'orange, le citron vert et le pamplemousse et mixer avec le laurier, l'origan, le roucou, le vinaigre balsamique blanc, la cannelle, le cumin et le demi oignon.
-Mariner la viande.
-
-Griller les feuilles de bananier des deux côtés pour les assouplir.
+  step1: "Préchauffer le four à 240°. Presser le jus de l'orange, le citron vert et le pamplemousse et mixer avec le laurier, l'origan, le roucou, le vinaigre balsamique blanc, la cannelle, le cumin et le demi oignon.
+Mariner la viande. Griller les feuilles de bananier des deux côtés pour les assouplir.
 Disposer les feuilles dans un plat de cuisson et ajouter les suprêmes de volaille. Fermer les feuilles et arroser avec un filet d'huile pour éviter le dessèchement, couvrir d'aluminium.
 et enfourner pendant 25 min.",
   step2: "Presser le jus du citron vert, mélanger avec le vinaigre d'alcool, l'eau, le sel et l'origan. Émincer les oignons et les plonger dans la marinade obtenue.",
-  step3: "Mélanger la farine de maïs avec le sel et l'eau et malaxer.
-A l'aide d'un rouleau pâtissier, étaler la pâte entre deux feuilles de papier sulfurisé d'une épaississeur de 3mm ou utiliser la presse à tortilla.
-
-Découper des cercles avec un emporte pièce ronde et cuire la tortilla dans une poêle antiadhésive, tourner de temps en temps pour que la pâte cuise."
+  step3: "Mélanger la farine de maïs avec le sel et l'eau et malaxer. A l'aide d'un rouleau pâtissier, étaler la pâte entre deux feuilles de papier sulfurisé d'une épaississeur de 3mm ou utiliser la presse à tortilla. Découper des cercles avec un emporte pièce ronde et cuire la tortilla dans une poêle antiadhésive, tourner de temps en temps pour que la pâte cuise."
 })
 photo_tacos = URI.open("https://source.unsplash.com/JiRSy0GfqPA")
 r1.photos.attach(io: photo_tacos, filename: 'photo_tacos.jpg', content_type: 'image/jpg')
@@ -105,12 +99,12 @@ r2 = Recipe.create({
   title: "Salade de poulpe aux poivrons et citrons confits",
   description: "Une belle salade de poulpe fraiche aux poivrons et citron confits. La poulpe est d'abord cuit dans du vin blanc et refroidi avant d'être agrémenter des légumes du soleil et d'une sauce pesto de verts de cébettes.",
   difficulty: "moyen",
+  number_of_persons: 5,
   cost: "€€",
   season: "Été",
   ustensils: "planche, couteau, grande casserole, robot, poêle",
   total_time: "2000-01-01 00:30:00",
   kitchen_type: "Mexicain",
-  user_id: 1,
   step1: "Nettoyer le poulpe, enlever le bec et bien rincer. Le sécher et le placer dans un plat. Le congéler pendant au moins 6 heures pour l'attendrir.
 Le sortir du congélateur une heure avant cuisson.
 Laver et sécher la carotte et poireau. Laver et zester le citron. Eplucher et émincer l'oignon. Emincer le blanc de poireau et la carotte. Ecraser la gusse d'ail en chemise.
@@ -130,6 +124,56 @@ photo_poulpe2 = URI.open("https://source.unsplash.com/LxC1Qx1qulc")
 r2.photos.attach(io: photo_poulpe2, filename: 'photo_poulpe2.jpg', content_type: 'image/jpg')
 r2.user = u1
 r2.save!
+r3 = Recipe.create({
+  title: "Pot-au-feu",
+  description: "Le pot-au-feu est une recette de cuisine traditionnelle emblématique historique de la cuisine française, et du repas gastronomique des Français, à base de viande de bœuf cuisant longuement à feu très doux dans un bouillon de légumes.",
+  difficulty: "moyen",
+  number_of_persons: 6,
+  cost: "€€",
+  season: "Hiver",
+  ustensils: "Un four, un écumoire, une casserole, une louche",
+  total_time: "2000-01-01 04:30:00",
+  kitchen_type: "Français",
+  step1: "Ficelez les morceaux de viande pour qu'ils se maintiennent en forme pendant la cuisson et, s'il y en a, coupez la queue de boeuf en tronçons.",
+  step2: "Épluchez les carottes, les poireaux et la branche de céleri, puis lavez-les.",
+  step3: "Piquez un oignon avec les clous de girofle et faites dorer le second, à sec, au four : il colorera le bouillon (pour colorer le bouillon, ajouter 1/2 cuillerée à café d’arôme Patrelle).",
+  step4: "Mettez dans un faitout tous les morceaux de viande et l’os à moelle, préalablement enveloppé dans une mousseline pour éviter que la moelle ne se répande. Mouillez avec 5 litres d'eau froide.",
+  step5: "Salez au gros sel. Portez à ébullition et laissez bouillir, en ayant soin d'écumer souvent, jusqu'à ce qu'il ne se forme plus d'écume.",
+  step6: "Ajoutez-y les oignons, les carottes, les poireaux (liés en botte), le céleri branche, l’ail et le bouquet garni, préalablement ficelé. Ajoutez 12 grains de poivre.",
+  step7: "Portez de nouveau à ébullition, puis laissez cuire, à couvert (la vapeur doit pouvoir s'échapper sur le côté), sur feu très doux, pendant au moins 4 heures.",
+  step8: "Dégraisser en cours de cuisson avec une petite louche.",
+  step9: "Le bouillon du pot-au-feu se consomme chaud ou tiède, en précédant les viandes et les légumes ou seul. Il peut aussi être la base de divers potages.",
+  step10: "Quant aux morceaux de viande et aux légumes, retirez-les du bouillon et dressez-les dans un plat chaud. Servez-les aussitôt, avec des cornichons, du gros sel et de la moutarde forte."
+})
+photo_pot = URI.open("https://source.unsplash.com/498g2U3_n_U")
+r3.photos.attach(io: photo_pot, filename: 'photo_pot.jpg', content_type: 'image/jpg')
+photo_pot2 = URI.open("https://source.unsplash.com/FoHTUTU8SzE")
+r3.photos.attach(io: photo_pot2, filename: 'photo_pot2.jpg', content_type: 'image/jpg')
+r3.user = u1
+r3.save!
+r4 = Recipe.create({
+  title: "Risotto au vin blanc",
+  description: "Le risotto est une réduction d'un bouillon de riz cuit avec divers ingrédients. On lui donne généralement comme origine le nord de l'Italie.",
+  difficulty: "moyen",
+  number_of_persons: 3,
+  cost: "€",
+  season: "Automne",
+  ustensils: "Un four, un écumoire, une casserole, une louche",
+  total_time: "2000-01-01 00:35:00",
+  kitchen_type: "Italien",
+  step1: "Dans une poêle, faites chauffer un filet d'huile d'olive. Pendant ce temps, émincez votre oignon et faites-le revenir quelques minutes quand la poêle est chaude. Baissez à feu moyen.",
+  step2: "Une fois les oignons caramélisés ajoutez le riz et mélangez jusqu'à ce qu'il devienne translucide. ",
+  step3: "Versez la moitié du vin blanc sur le riz et tournez-le jusqu'à ce qu'il soit absorbé. ",
+  step4: "Une fois que le vin a été absorbé, ajoutez la dernière moitié et mélangez à nouveau jusqu'à totale absorption.",
+  step5: "Versez du bouillon jusqu'à ce que le risotto devienne crémeux. Comptez une vingtaine de minutes environ. ",
+  step6: "Assaisonnez avec le sel et le poivre et ajoutez le parmesan râpé."
+  })
+photo_risotto = URI.open("https://source.unsplash.com/qIPRTMulc-g")
+r4.photos.attach(io: photo_risotto, filename: 'photo_risotto.jpg', content_type: 'image/jpg')
+photo_risotto2 = URI.open("https://source.unsplash.com/luTXE_Rj1dY")
+r4.photos.attach(io: photo_risotto2, filename: 'photo_risotto2.jpg', content_type: 'image/jpg')
+r4.user = u1
+r4.save!
 
 puts "Creating ingredients for a page 1..."
   url = "https://www.marmiton.org/recettes/index/ingredient"
