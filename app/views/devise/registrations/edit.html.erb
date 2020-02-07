@@ -1,41 +1,59 @@
 <div class="container mt-4">
   <div class="row">
-    <div class="col-12 col-md-6 offset-md-3 form-devise">
-      <h2>Modifier <%= resource_name.to_s.humanize %></h2>
-
+    <div class="col-12 col-md-8 offset-md-2 form-devise">
+      <h2>Bonjour <%= resource.prenom.to_s.humanize %></h2>
+      <p class="edit-profile-subtitle">Veuillez modifier vos informations ci-dessous</p>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
-
-        <div class="form-inputs">
+        <div class="form-group mt-4">
+          <div class="row avatar-edit">
+            <div class="col-sm-4">
+              <% if resource.avatar.attached? %>
+                <%= cl_image_tag resource.avatar.key, height: 150, width: 150, gravity: 'face', crop: 'thumb', class: "rounded-circle" %>
+              <% else %>
+                <%= image_tag gravatar_image_url(current_user.email, size: 100), height: 100, width: 100, class: "rounded-circle" %>
+              <% end %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.input :avatar, as: :file, label_html: { class: 'upload-photo mt-3'}, label: '📷 Téléchargez une photo', input_html: { class: 'd-none', id: 'photo-input' }, error: 'Veuillez ajouter une photo.' %>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mt-4">
           <%= f.input :email, required: true, autofocus: true %>
-
+        </div>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
           <% end %>
-
+        <div class="form-group">
           <%= f.input :password,
-                      hint: "leave it blank if you don't want to change it",
+                      hint: "Laissez ce champ vide si vous ne voulez pas le modifier",
                       required: false,
                       input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="form-group">
           <%= f.input :password_confirmation,
                       required: false,
                       input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="form-group">
           <%= f.input :current_password,
-                      hint: "we need your current password to confirm your changes",
+                      hint: "Nous avons besoin de votre mot de passe actuel pour le modifier",
                       required: true,
                       input_html: { autocomplete: "current-password" } %>
         </div>
-
         <div class="form-actions">
-          <%= f.button :submit, "Update" %>
+          <%= f.button :submit, "Mettre à jour votre profil", class:" btn btn-primary" %>
         </div>
       <% end %>
-
-      <h3>Supprimer mon compte</h3>
-
-      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-      <%= link_to "Back", :back %>
+      <div class="delete-account mt-5">
+        <h3>Supprimer mon compte</h3>
+        <p>Vous souhaitez supprimer votre compte ?</p>
+        <%= link_to "Supprimer mon compte", registration_path(resource_name), class: "btn btn-primary", data: { confirm: "Vous êtes sûrs ?" }, method: :delete %></p>
+      </div>
+      <div class="back mt-5">
+        <%= link_to "Revenir en arrière", :back %>
+      </div>
     </div>
   </div>
 </div>

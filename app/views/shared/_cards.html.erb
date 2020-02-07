@@ -13,7 +13,11 @@
           <div class="card-bottom">
             <div class="time">
               <i class="far fa-clock"></i>
-              <p class="time"><%= recipe.total_time.utc.strftime("%Hh%Mmin") %></p>
+              <% if recipe.total_time.utc.strftime("%H") == "00" %>
+                <p class="time"><%= recipe.total_time.utc.strftime("%M minutes") %></p>
+              <% else %>
+                <p class="time"><%= recipe.total_time.utc.strftime("%Hh%M") %></p>
+              <% end %>
             </div>
             <div class="author">
               <i class="far fa-user"></i>

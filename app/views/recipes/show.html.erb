@@ -9,6 +9,7 @@
       <div class="left-side">
         <div class="time">
           <i class="far fa-clock"></i>
+          <% time =  %>
           <p>Publié le <%= l(@recipe.created_at.utc, format: '%B %d, %Y') %></p>
         </div>
         <div class="author">
@@ -19,7 +20,7 @@
       <div class="right-side">
         <div class="parent-likes">
           <div class="number-likes">
-            <%= pluralize @recipe.likes.size, "like" %>
+            <%= pluralize(@recipe.likes.size, 'like') %>
           </div>
           <% pre_like = @recipe.likes.find { |like| like.user_id == current_user.id} %>
           <% if pre_like %>
@@ -44,7 +45,11 @@
         <i class="fas fa-stopwatch fa-2x"></i>
         <div class="lines">
           <h3>Temps total</h3>
-          <p><%= @recipe.total_time.utc.strftime("%Hh%M") %></p>
+          <% if @recipe.total_time.utc.strftime("%H") == "00" %>
+            <p><%= @recipe.total_time.utc.strftime("%M min") %></p>
+          <% else %>
+            <p><%= @recipe.total_time.utc.strftime("%Hh%M") %></p>
+          <% end %>
         </div>
       </div>
       <div class="difficulty-single">
@@ -76,14 +81,24 @@
           <h3>Ingrédients</h3>
         </div>
         <div class="bottom-ingredients mt-5">
-          <% if @recipe.ingredients.empty? %>
-            <p>Vous n’avez pas encore ajouté d’ingrédient à votre recette.</p>
-            <%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary mt-5', data: { toggle: 'modal', target: '#modalDoses' } %>
-          <% else %>
-            <% @recipe.doses.each do |d| %>
-              <p d-id="<%= d.id %>"><%= Ingredient.find(id=d.ingredient_id).name %> - <%= d.description %> <%= link_to "Supprimer", recipe_dose_path(d), method: :delete, data: { confirm: "Are you sure?" }, remote: true %> <%= link_to "Modifier", edit_recipe_dose_path(d), data: { toggle: 'modal', target: '#modalDoses' } %></p>
+          <% if @recipe.user == current_user %>
+            <% if @recipe.ingredients.empty? %>
+              <p>Vous n’avez pas encore ajouté d’ingrédient à votre recette.</p>
+              <%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary mt-5', data: { toggle: 'modal', target: '#modalDoses' } %>
+            <% else %>
+              <% @recipe.doses.each do |d| %>
+                <p d-id="<%= d.id %>"><%= Ingredient.find(id=d.ingredient_id).name %> - <%= d.description %> <%= link_to "Supprimer", recipe_dose_path(d), method: :delete, data: { confirm: "Are you sure?" }, remote: true %> <%= link_to "Modifier", edit_recipe_dose_path(d), data: { toggle: 'modal', target: '#modalDoses' } %></p>
+              <% end %>
+              <p><%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary mt-5', data: { toggle: 'modal', target: '#modalDoses' } %></p>
             <% end %>
-            <p><%= link_to "Ajouter des ingrédients", new_recipe_dose_path(@recipe), class: 'btn btn-primary mt-5', data: { toggle: 'modal', target: '#modalDoses' } %></p>
+          <% else %>
+            <% if @recipe.ingredients.empty? %>
+              <p>L'auteur de la recette n'a pas encore ajouté d'ingrédient.</p>
+            <% else %>
+              <% @recipe.doses.each do |d| %>
+                <p d-id="<%= d.id %>"><%= Ingredient.find(id=d.ingredient_id).name %> - <%= d.description %> <%= link_to "Supprimer", recipe_dose_path(d), method: :delete, data: { confirm: "Are you sure?" }, remote: true %> <%= link_to "Modifier", edit_recipe_dose_path(d), data: { toggle: 'modal', target: '#modalDoses' } %></p>
+              <% end %>
+            <% end %>
           <% end %>
         </div>
       </div>

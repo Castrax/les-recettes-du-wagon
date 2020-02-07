@@ -98,3 +98,53 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .layout-profile {
+    padding: 25px 0 0;
+    transform: translateY(0);
+    margin-bottom: 0;
+    background-image: none;
+  }
+  .author-infos {
+    text-align:center;
+    display: block !important;
+  }
+  .profile-infos {
+    display: block;
+    height: 80vh;
+  }
+  .right-infos {
+    margin-left: 5rem;
+  }
+  .list-recipes-profile {
+    grid-template-columns: 1fr;
+  }
+  .profile-recipes {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .thumbnail-hp {
+    object-fit: cover;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .thumbnail-hp {
+    object-fit: cover;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+

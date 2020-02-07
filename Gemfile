@@ -26,6 +26,7 @@ gem 'searchkick'
 gem 'summernote-rails', '~> 0.8.12.0'
 gem 'popper_js'
 gem 'select2-rails'
+gem 'gravatar_image_tag'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

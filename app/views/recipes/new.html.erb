@@ -33,7 +33,7 @@
      <%= f.input :ustensils, label: 'Ustensiles', error: 'Veuillez ajouter des ustensiles de cuisine.' %>
      <%= f.input :photos, as: :file, label_html: { class: 'upload-photo mt-3'}, label: '📷 Téléchargez des photos', input_html: { class: 'd-none', id: 'photo-input', multiple: true }, error: 'Veuillez ajouter plusieurs photos.' %>
      <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-     <%= f.submit "Ajouter la recette", class: "btn btn-primary button-add-recipe" %>
+     <%= f.submit "Validez la recette pour ajouter les ingrédients", class: "btn btn-primary button-add-recipe" %>
     <% end %>
   </div>
 </div>

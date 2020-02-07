@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :doses
   end
   resources :ingredients
+  resources :users
 end
