@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_105559) do
+ActiveRecord::Schema.define(version: 2020_02_07_161658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 2020_01_24_105559) do
     t.string "step13"
     t.string "step14"
     t.string "step15"
+    t.integer "number_of_persons"
   end
 
   create_table "users", force: :cascade do |t|

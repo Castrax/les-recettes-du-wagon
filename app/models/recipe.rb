@@ -7,6 +7,7 @@ class Recipe < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :kitchen_type, presence: true
+  validates :number_of_persons, presence: true
   validates :step1, presence: true
   validates :difficulty, presence: true
   validates :cost, presence: true

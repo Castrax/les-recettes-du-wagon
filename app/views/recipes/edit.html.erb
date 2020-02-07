@@ -7,6 +7,7 @@
      <%= f.input :title, label: 'Titre', placeholder: 'Ex : Tacos de Pollo Pibil', error: 'Veuillez rédiger un titre.' %>
      <%= f.input :description, placeholder: 'Ex : Blancs de volaille marinés à la sauce pibil...', error: 'Veuillez rédiger une description.' %>
      <%= f.input :kitchen_type, label: 'Catégorie ou type de cuisine', placeholder: 'Mexicain', collection: ["Halal", "Petit déjeuner", "Végétarien", "Mexicain", "Dessert", "Indien", "Grec", "Japonais", "Chinois", "Cambodgien", "Vietnamien", "Thaïlandais", "Asiatique", "Libanais", "Américain", "Italien", "Français", "Healthy"], error: 'Veuillez sélectionner un type de cuisine.' %>
+      <%= f.input :number_of_persons, label: 'Nombre de personnes', placeholder: '2', collection: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"] %>
      <%= f.input :difficulty, label: 'Difficulté', collection: ["Facile", "Moyen", "Difficile"], error: "Veuillez sélectionner un niveau de difficulté." %>
      <%= f.input :cost, label: 'Coût', collection: ["€", "€€", "€€€"], error: "Veuillez sélectionner un niveau de coût." %>
      <%= f.input :step1, as: :text, label: 'Étape 1 de préparation', error: 'Veuillez rédiger les étapes de préparation.' %>
