@@ -52,6 +52,85 @@ require 'nokogiri'
 # })
 # puts 'Finished!'
 
+puts "Cleaning the DB..."
+
+User.destroy_all
+Recipe.destroy_all
+Ingredient.destroy_all
+Dose.destroy_all
+Like.destroy_all
+
+puts "Database cleaned !"
+
+puts "Creating user"
+u1 = User.create!({
+  email: "contact@mathilderobert.com",
+  prenom: "Mathilde",
+  nom: "Robert",
+  surnom: "Titilde",
+  password: "5656vbui"
+})
+
+puts "Creating recipes..."
+r1 = Recipe.create({
+  title: "Tacos de pollo pibil",
+  description: "Blancs de volaille marinés à la sauce pibil servi sur une tortilla de maïs.",
+  difficulty: "facile",
+  cost: "€",
+  season: "Été",
+  ustensils: "1 couteau, 1 poêle",
+  total_time: "2000-01-01 00:40:00",
+  kitchen_type: "Mexicain",
+  user_id: 1,
+  step1: "Préchauffer le four à 240°
+Presser le jus de l'orange, le citron vert et le pamplemousse et mixer avec le laurier, l'origan, le roucou, le vinaigre balsamique blanc, la cannelle, le cumin et le demi oignon.
+Mariner la viande.
+
+Griller les feuilles de bananier des deux côtés pour les assouplir.
+Disposer les feuilles dans un plat de cuisson et ajouter les suprêmes de volaille. Fermer les feuilles et arroser avec un filet d'huile pour éviter le dessèchement, couvrir d'aluminium.
+et enfourner pendant 25 min.",
+  step2: "Presser le jus du citron vert, mélanger avec le vinaigre d'alcool, l'eau, le sel et l'origan. Émincer les oignons et les plonger dans la marinade obtenue.",
+  step3: "Mélanger la farine de maïs avec le sel et l'eau et malaxer.
+A l'aide d'un rouleau pâtissier, étaler la pâte entre deux feuilles de papier sulfurisé d'une épaississeur de 3mm ou utiliser la presse à tortilla.
+
+Découper des cercles avec un emporte pièce ronde et cuire la tortilla dans une poêle antiadhésive, tourner de temps en temps pour que la pâte cuise."
+})
+photo_tacos = URI.open("https://source.unsplash.com/JiRSy0GfqPA")
+r1.photos.attach(io: photo_tacos, filename: 'photo_tacos.jpg', content_type: 'image/jpg')
+photo_tacos2 = URI.open("https://source.unsplash.com/ZQf4jzkpz1k")
+r1.photos.attach(io: photo_tacos2, filename: 'photo_tacos2.jpg', content_type: 'image/jpg')
+r1.user = u1
+r1.save!
+r2 = Recipe.create({
+  title: "Salade de poulpe aux poivrons et citrons confits",
+  description: "Une belle salade de poulpe fraiche aux poivrons et citron confits. La poulpe est d'abord cuit dans du vin blanc et refroidi avant d'être agrémenter des légumes du soleil et d'une sauce pesto de verts de cébettes.",
+  difficulty: "moyen",
+  cost: "€€",
+  season: "Été",
+  ustensils: "planche, couteau, grande casserole, robot, poêle",
+  total_time: "2000-01-01 00:30:00",
+  kitchen_type: "Mexicain",
+  user_id: 1,
+  step1: "Nettoyer le poulpe, enlever le bec et bien rincer. Le sécher et le placer dans un plat. Le congéler pendant au moins 6 heures pour l'attendrir.
+Le sortir du congélateur une heure avant cuisson.
+Laver et sécher la carotte et poireau. Laver et zester le citron. Eplucher et émincer l'oignon. Emincer le blanc de poireau et la carotte. Ecraser la gusse d'ail en chemise.
+Chauffer l'huile d'olive dans une cocotte et faire revenir le poulpe 2 minutes. Saler. Ajouter l'oignon, cuire sans coloration et ajouter la carotte, poireau et gousse d'ail, le zeste de citron et le thym. Bien mélanger. Mouiller avec le vin blanc, porter à ébullution, baisser et cuire à frémissement 30 minutes. Laisser refroidir le poulpe dans la cuisson et réserver.",
+  step2: "Eplucher les poivrons et les tailler en julienne.
+Laver les cives, séparer le vert et tailler le blanc en biseaux.
+Tailler le citron confit en quartiers, enlever le coeur et tailler la peau en julienne. Tailler les tomates confites en julienne.
+Chauffer un peu d'huile d'olive dans une poêle et faire sauter les poivrons quelques minutes. Saler, poivrer. Débarrasser.",
+  step3: "Mixer le vert des cives, le persil et l'huile d'olive au blender. Réserver.",
+  step4: "Récuperer le poulpe refroidi.
+Séparer la tête des tentacules. Tailler les tentacules en fines tranches, réserver la tête pour une autre utilisation.
+Dans un saladier, melanger le poulpe, les poivrons, le citron et tomates confites. Assaisonner, bien mélanger et réserver au frais."
+})
+photo_poulpe = URI.open("https://source.unsplash.com/8YhMxwhuyQM")
+r2.photos.attach(io: photo_poulpe, filename: 'photo_poulpe.jpg', content_type: 'image/jpg')
+photo_poulpe2 = URI.open("https://source.unsplash.com/LxC1Qx1qulc")
+r2.photos.attach(io: photo_poulpe2, filename: 'photo_poulpe2.jpg', content_type: 'image/jpg')
+r2.user = u1
+r2.save!
+
 puts "Creating ingredients for a page 1..."
   url = "https://www.marmiton.org/recettes/index/ingredient"
   html_file = open(url).read

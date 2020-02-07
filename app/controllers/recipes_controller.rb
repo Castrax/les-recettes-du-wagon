@@ -54,6 +54,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     authorize @recipe
     @recipe.destroy
+    redirect_to recipes_path
   end
 
   private

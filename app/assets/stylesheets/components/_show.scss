@@ -213,3 +213,11 @@
   }
 }
 
+// Large devices (min 1280px)
+@media (min-width: 1280px) {
+  .photo-show {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+

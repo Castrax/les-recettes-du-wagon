@@ -103,9 +103,8 @@
     <div class="bottom-admin">
       <div class="delete-recipe">
         <% if policy(@recipe).destroy? %>
-          <%= link_to "Supprimer la recette", recipe_path(@recipe),
-              method: :delete,
-              data: { confirm: "Are you sure?", id: 'sweet-alert-demo' }, class: 'btn btn-primary' %>
+          <button id="sweet-alert-destroy-recipe" class="btn btn-primary">Supprimer votre recette</button>
+          <%= link_to "", recipe_path(@recipe), method: :delete, id: "delete-link", class: "hidden" %>
         <% end %>
       </div>
       <div class="edit-recipe">

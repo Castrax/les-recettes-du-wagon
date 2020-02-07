@@ -5,6 +5,6 @@
 //= require summernote-init
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 //= require jquery_ujs
 //= require select2
+//= require_tree .
