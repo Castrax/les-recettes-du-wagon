@@ -67,7 +67,7 @@ u1 = User.create!({
   email: "contact@mathilderobert.com",
   prenom: "Mathilde",
   nom: "Robert",
-  surnom: "Titilde",
+  batch_name: "321",
   password: "5656vbui",
   admin: true
 })
