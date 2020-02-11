@@ -68,7 +68,8 @@ u1 = User.create!({
   prenom: "Mathilde",
   nom: "Robert",
   surnom: "Titilde",
-  password: "5656vbui"
+  password: "5656vbui",
+  admin: true
 })
 
 puts "Creating recipes..."
