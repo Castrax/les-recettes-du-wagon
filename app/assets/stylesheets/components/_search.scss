@@ -19,6 +19,9 @@
   .form-inline .form-control {
     width: 70vw;
   }
+  .card-img-top {
+    object-fit: cover;
+  }
   .list-recipes {
     grid-template-columns: 1fr 1fr !important;
   }
